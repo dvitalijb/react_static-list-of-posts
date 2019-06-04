@@ -3,14 +3,13 @@ import User from './User';
 import CommentList from './CommentList';
 
 export default function Post(props) {
-    const {usersMap} = props;
-    const {commentsMap} = props;
-    const {userId} = props;
+    const { usersMap } = props;
+    const { commentsMap } = props;
+    const { userId } = props;
     const comments = {};
 
     for (let key in commentsMap) {
         if (commentsMap[key].postId === userId) {
-
             comments[key] = commentsMap[key];
         }
     }
@@ -25,9 +24,8 @@ export default function Post(props) {
                 <User user={usersMap[userId]}/>
             </td>
             <td>
-                <CommentList comments={comments} />
+                <CommentList comments={comments}/>
             </td>
-
         </tr>
     )
 }
