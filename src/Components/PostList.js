@@ -15,7 +15,7 @@ export default function PostList() {
                                           commentsMap={commentsMap}
                                           usersMap={usersMap}/>)
 
-    console.log(commentsMap)
+
     return (
         <table>
             <thead>
