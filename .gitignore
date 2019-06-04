@@ -18,6 +18,11 @@
 .env.test.local
 .env.production.local
 
+#state
+.src/State/comments.js
+.src/State/posts.js
+.src/State/users.js
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

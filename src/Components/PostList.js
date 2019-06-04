@@ -1,7 +1,7 @@
 import React from 'react';
-import { posts } from '../State/posts';
-import { users } from '../State/users';
-import { comments } from '../State/comments';
+import {posts} from '../State/posts';
+import {users} from '../State/users';
+import {comments} from '../State/comments';
 import Post from './Post';
 
 export default function PostList() {
