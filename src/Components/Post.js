@@ -1,16 +1,17 @@
 import React from 'react';
 import User from './User';
 import CommentList from './CommentList';
+import { comments } from '../State/Comments.js';
+
 
 export default function Post(props) {
     const { usersMap } = props;
-    const { commentsMap } = props;
     const { userId } = props;
-    const comments = {};
+    const commentsItems = [];
 
-    for (let key in commentsMap) {
-        if (commentsMap[key].postId === userId) {
-            comments[key] = commentsMap[key];
+    for (const comment of comments) {
+        if (comment.postId === userId) {
+            commentsItems.push(comment);
         }
     }
 
@@ -24,7 +25,7 @@ export default function Post(props) {
                 <User user={usersMap[userId]}/>
             </td>
             <td>
-                <CommentList comments={comments}/>
+                <CommentList comments={commentsItems}/>
             </td>
         </tr>
     )
