@@ -1,7 +1,7 @@
 import React from 'react';
 import User from './User';
 import CommentList from './CommentList';
-import { comments } from '../State/comments.js';
+import { comments } from '../State/comments';
 
 
 export default function Post(props) {
