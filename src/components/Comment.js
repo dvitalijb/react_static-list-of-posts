@@ -1,11 +1,12 @@
 import React from 'react';
 
 export default function Comment(props) {
+    const {body, name} = props;
     return (
         <section>
-            <p>{props.body}</p>
-            <span>{props.name}</span>
+            <p>{body}</p>
+            <span>{name}</span>
         </section>
-    )
+    );
 
 }

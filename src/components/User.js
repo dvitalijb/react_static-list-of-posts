@@ -1,10 +1,11 @@
 import React from 'react';
 
 export default function User(props) {
+    const {name, email} = props.user;
     return (
         <section>
-            <h2>{props.user.name}</h2>
-            <h5>{props.user.email}</h5>
+            <h2>{name}</h2>
+            <h5>{email}</h5>
         </section>
-    )
+    );
 }

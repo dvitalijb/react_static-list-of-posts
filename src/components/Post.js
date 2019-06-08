@@ -1,25 +1,16 @@
 import React from 'react';
 import User from './User';
 import CommentList from './CommentList';
-import { comments } from '../State/comments';
-
 
 export default function Post(props) {
-    const { usersMap } = props;
-    const { userId } = props;
-    const commentsItems = [];
-
-    for (const comment of comments) {
-        if (comment.postId === userId) {
-            commentsItems.push(comment);
-        }
-    }
+    const { usersMap, comments, userId, title, body } = props;
+    const commentsItems = comments.filter(comment => comment.postId === userId);
 
     return (
         <tr>
             <td>
-                <span>{props.title}</span>
-                <p>{props.body}</p>
+                <span>{title}</span>
+                <p>{body}</p>
             </td>
             <td>
                 <User user={usersMap[userId]}/>
@@ -28,5 +19,5 @@ export default function Post(props) {
                 <CommentList comments={commentsItems}/>
             </td>
         </tr>
-    )
+    );
 }
