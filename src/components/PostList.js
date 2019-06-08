@@ -5,13 +5,13 @@ export function PostList(props) {
     const { comments, users, posts } = props;
     const usersMap = users.reduce((acc, user) => ({...acc, [user.id]: user,}), {});
     const items = posts.map(item => (<Post key={item.id}
-                                                 userId={item.userId}
-                                                 title={item.title}
-                                                 body={item.body}
-                                                 id={item.id}
-                                                 comments={comments}
-                                                 usersMap={usersMap}
-                                                 />));
+                                           userId={item.userId}
+                                           title={item.title}
+                                           body={item.body}
+                                           id={item.id}
+                                           comments={comments}
+                                           usersMap={usersMap}
+                                           />));
 
     return (
         <table>
