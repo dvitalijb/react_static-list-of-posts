@@ -1,14 +1,14 @@
 import React from 'react';
-import Post from './Post';
+import { Post } from './Post';
 
-
-export default function PostList(props) {
-    const { comments } = props;
-    const usersMap = props.users.reduce((acc, user) => ({...acc, [user.id]: user,}), {});
-    const items = props.posts.map(item => (<Post key={item.id}
+export function PostList(props) {
+    const { comments, users, posts } = props;
+    const usersMap = users.reduce((acc, user) => ({...acc, [user.id]: user,}), {});
+    const items = posts.map(item => (<Post key={item.id}
                                                  userId={item.userId}
                                                  title={item.title}
                                                  body={item.body}
+                                                 id={item.id}
                                                  comments={comments}
                                                  usersMap={usersMap}
                                                  />));
@@ -26,5 +26,5 @@ export default function PostList(props) {
                     {items}
                 </tbody>
         </table>
-    )
+    );
 }

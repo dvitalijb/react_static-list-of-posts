@@ -1,10 +1,11 @@
 import React from 'react';
-import User from './User';
-import CommentList from './CommentList';
+import { User } from './User';
+import { CommentList } from './CommentList';
 
-export default function Post(props) {
-    const { usersMap, comments, userId, title, body } = props;
-    const commentsItems = comments.filter(comment => comment.postId === userId);
+export function Post(props) {
+    const { usersMap, comments, userId, title, body, id } = props;
+    const commentItems = comments.filter(comment => comment.postId === id);
+    const user = usersMap[userId];
 
     return (
         <tr>
@@ -13,10 +14,10 @@ export default function Post(props) {
                 <p>{body}</p>
             </td>
             <td>
-                <User user={usersMap[userId]}/>
+                <User user={user}/>
             </td>
             <td>
-                <CommentList comments={commentsItems}/>
+                <CommentList comments={commentItems}/>
             </td>
         </tr>
     );

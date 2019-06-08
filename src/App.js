@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import PostList from './components/PostList';
+import { PostList } from './components/PostList';
 import { users } from './state/users';
 import { posts } from './state/posts';
 import { comments } from './state/comments';
